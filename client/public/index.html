@@ -5,11 +5,12 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -40,5 +41,24 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.1.1.js"></script>
+    <script src="js/bgstretcher.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('body').bgStretcher({
+          images: ['images/slide-1.jpg', 'images/slide-2.jpg', 'images/slide-3.jpg'],
+          imageWidth: 1600,
+          imageHeight: 964,
+          resizeProportionally: true,
+          slideDirection: 'N',
+          slideShowSpeed: 1000,
+          transitionEffect: 'fade',
+          sequenceMode: 'normal',
+          pagination: '#nav'
+        });
+      });
+    </script>
   </body>
 </html>
