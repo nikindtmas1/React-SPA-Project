@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/jquery.fancybox.css" >
-  
-    <title>Spa App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-migrate-1.1.1.js"></script>
-    <script src="js/bgstretcher.js"></script>
-    <script src="js/jquery.elastislide.js"></script>
-    <script src="js/jquery.fancybox.pack.js"></script>
-    <script>
+<head>
+  <title>Spa App</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-migrate-1.1.1.js"></script>
+  <script src="js/bgstretcher.js"></script>
+
+  <script>
     $(document).ready(function () {
-        $('body').bgStretcher({
-            images: ['images/slide-1.jpg'],
-            imageWidth: 1600,
-            imageHeight: 964,
-            resizeProportionally: true
-        });
-        $('#carousel').elastislide({
-            imageW: 300,
-            margin: 20,
-            minItems: 3
-        });
-        $('.magnifier').fancybox();
-        $(".view").hover(
-            function () {
-                $(this).find("img").stop().animate({
-                    opacity: 0.5
-                }, "normal")
-            },
-            function () {
-                $(this).find("img").stop().animate({
-                    opacity: 1
-                }, "normal")
-            })
-    })
-    </script>
-  </body>
+      $('body').bgStretcher({
+        images: ['images/slide-1.jpg', 'images/slide-2.jpg', 'images/slide-3.jpg'],
+        imageWidth: 1600,
+        imageHeight: 964,
+        resizeProportionally: true,
+        slideDirection: 'N',
+        slideShowSpeed: 1000,
+        transitionEffect: 'fade',
+        sequenceMode: 'normal',
+        pagination: '#nav'
+      });
+    });
+  </script>
+  
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <script src="js/jquery.elastislide.js"></script>
+  <script src="js/jquery.fancybox.pack.js"></script>
+  <script>
+  $(document).ready(function () {
+      $('body').bgStretcher({
+          images: ['images/slide-1.jpg'],
+          imageWidth: 1600,
+          imageHeight: 964,
+          resizeProportionally: true
+      });
+      $('#carousel').elastislide({
+          imageW: 300,
+          margin: 20,
+          minItems: 3
+      });
+      $('.magnifier').fancybox();
+      $(".view").hover(
+          function () {
+              $(this).find("img").stop().animate({
+                  opacity: 0.5
+              }, "normal")
+          },
+          function () {
+              $(this).find("img").stop().animate({
+                  opacity: 1
+              }, "normal")
+          })
+  })
+  </script>
+</body>
+
 </html>
