@@ -32,7 +32,7 @@ const Main = () => {
                 </div>
             </div>
 
-            {/* <Footer /> */}
+            <Footer />
         </div>
         </>
         
